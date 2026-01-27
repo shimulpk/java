@@ -39,7 +39,7 @@ public class AugmentedAssignmentOperators {
 //            Increment*****End
 
 
-            impleced********start
+//            impleced********start
 //
 //        System.out.println(120.566);
 //        System.out.println((int)120.566);
@@ -50,14 +50,14 @@ public class AugmentedAssignmentOperators {
 
 //            ADDD***************** start
 
-Scanner number2=new Scanner(System.in);
-        System.out.println("enter add 1 :");
-    int input1=number2.nextInt();
-    
-    System.out.println("enter add 2 :");
-    int input2=number2.nextInt();
-        System.out.println("ans :"+(input1+input2));
+
+        Scanner input=new Scanner(System.in);
         
+        int number1=input.nextInt();
+        int number2=input.nextInt();
+        System.out.println("Number 1 + Number 2 = "+(number1+number2));
+        
+
 //        Addd***************End
 //      
 //        Scanner input=new Scanner(System.in);
@@ -67,7 +67,10 @@ Scanner number2=new Scanner(System.in);
 //        System.out.println("What is your Name");
 //        name=input.nextLine();
 //        System.out.println("welcome "+name);
-//     
+   
+
+        
+    
         
 
 
