@@ -4,6 +4,7 @@
 /IfElseStatement/build/
 /NestedIf/nbproject/private/
 /NestedIf/build/
+<<<<<<< Updated upstream
 /OddEven/nbproject/private/
 /PositiveNegativeNumber/nbproject/private/
 /PositiveNegativeNumber/build/
@@ -27,7 +28,21 @@
 /DiscountCalculate/build/
 /AtmTaka/nbproject/private/
 /AtmTaka/build/
+<<<<<<< HEAD
 /WhileLoopCheck/nbproject/private/
 /WhileLoopCheck/build/
 /GueesesBirthDay/nbproject/private/
 /GueesesBirthDay/build/
+=======
+/Factorial/nbproject/private/
+/Factorial/build/
+/Factorial/dist/
+=======
+/Name/nbproject/private/
+/Name/build/
+>>>>>>> Stashed changes
+/GuessGame/nbproject/private/
+/GuessGame/build/
+/PrimeNumber/nbproject/private/
+/PrimeNumber/build/
+>>>>>>> be2ce742d7438fe773a9f5d1f180b704387cb166
