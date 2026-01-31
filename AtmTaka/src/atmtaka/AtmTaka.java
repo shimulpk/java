@@ -15,7 +15,7 @@ public class AtmTaka {
         System.out.println("Enter your widthdrawal");
         int withdrawal=input.nextInt();
         
-        if(ballance>withdrawal){
+        if(ballance>=withdrawal){
             System.out.println("Allow");
         }
         
