@@ -4,6 +4,7 @@
 /IfElseStatement/build/
 /NestedIf/nbproject/private/
 /NestedIf/build/
+<<<<<<< Updated upstream
 /OddEven/nbproject/private/
 /PositiveNegativeNumber/nbproject/private/
 /PositiveNegativeNumber/build/
@@ -30,3 +31,7 @@
 /Factorial/nbproject/private/
 /Factorial/build/
 /Factorial/dist/
+=======
+/Name/nbproject/private/
+/Name/build/
+>>>>>>> Stashed changes
