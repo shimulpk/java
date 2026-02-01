@@ -6,7 +6,7 @@ public class PractiseMethod {
 
        
 //        question kno sout r moddhe kora jasse na
-        printGrade(68.9);
+//        printGrade(59.9);
         
 
     }
