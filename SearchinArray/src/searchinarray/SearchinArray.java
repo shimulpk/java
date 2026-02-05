@@ -18,6 +18,7 @@ public class SearchinArray {
             numbers[i]=userInput;
         }
          System.out.println(" user search ");
+         
         int search = input.nextInt();
         int result = LinearSearh(numbers, search);
         System.out.println(result);
