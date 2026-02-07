@@ -62,10 +62,18 @@
 /bubleSort/build/
 /SearchinArray/nbproject/private/
 /SearchinArray/build/
+<<<<<<< Updated upstream
 /TwoDimentionalArray/nbproject/private/
 /TwoDimentionalArray/build/
 /MultiDimensionFor/nbproject/private/
 /CreateUSerMulti/nbproject/private/
 /CreateUSerMulti/build/
+<<<<<<< HEAD
 /LearnObjectClass/nbproject/private/
 /LearnObjectClass/build/
+=======
+=======
+/ArrayJava04.02.26/nbproject/private/
+/ArrayJava04.02.26/build/
+>>>>>>> Stashed changes
+>>>>>>> bea627a7144da180390cb09bbbb99cee6fe60bdc
