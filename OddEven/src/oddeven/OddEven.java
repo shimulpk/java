@@ -18,9 +18,8 @@ public class OddEven {
         else{
          System.out.println("it is a odd number");
         }
-       
-        
-        
+     
+    
                 
     }
     

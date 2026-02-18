@@ -24,6 +24,8 @@ public class ElectricityBill {
         else{
             System.out.println(unit*10);
         }
+
+    
     }
     
 }
