@@ -58,12 +58,7 @@ public class LargestNumber {
             System.out.println("largest number is "+number3);
         }
         
-            
-    
-    
-    
-            
-            
+        
             
    } 
     
