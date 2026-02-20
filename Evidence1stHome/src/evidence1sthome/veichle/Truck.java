@@ -23,6 +23,20 @@ public class Truck extends Veichle{
         return regularPrice-(regularPrice*0.10);
         }
         else{return regularPrice;} 
+    
+    
     }
     
-}
+    
+   
+    }
+    
+    
+    
+    
+
+    
+    
+    
+    
+

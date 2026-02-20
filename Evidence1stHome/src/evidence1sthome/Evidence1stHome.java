@@ -1,6 +1,7 @@
 
 package evidence1sthome;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -20,8 +21,12 @@ public class Evidence1stHome {
         }
         System.out.println("sum is "+sum);
 
-
-        }
+     
     }
+        
+
+}
+        
+    
     
 

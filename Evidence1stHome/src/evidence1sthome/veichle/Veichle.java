@@ -17,4 +17,13 @@ public class Veichle {
   public double getSalePrice(){
   return regularPrice;
   }
-}
+    
+  
+   }
+   
+    
+    
+    
+    
+    
+
