@@ -13,6 +13,7 @@ public class POS {
         UserDao dao=new UserDao();
         dao.saveUser(u);
         
+        
     }
     
 }
