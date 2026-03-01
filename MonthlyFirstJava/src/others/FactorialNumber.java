@@ -14,6 +14,8 @@ public class FactorialNumber {
         factorial *=i;
         }
         System.out.println("Factorial number is "+factorial);
-        
+      
+
+
     }
 }

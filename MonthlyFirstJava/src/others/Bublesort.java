@@ -2,40 +2,54 @@
 package others;
 
 import java.util.Arrays;
+
 import java.util.Scanner;
+import javax.crypto.AEADBadTagException;
 
 
 public class Bublesort {
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
-        System.out.println("how many number you want compair");
-        int n = s.nextInt();
-        int numbers[] = new int[n];
-        System.out.println("begining of loop" + Arrays.toString(numbers));
-        for (int index = 0; index < n; index++) {
-            System.out.println("enter Your " + (index + 1) + " number");
-            int userInput = s.nextInt();
-            numbers[index] = userInput;
-        }
-        System.out.println("ending of loop" + Arrays.toString(numbers));
         
-        
-        int newArray[] = sort(numbers);
-        
-        System.out.println(Arrays.toString(newArray));
-                                  
-    }
 
-    public static int[] sort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - 1 - i; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
+    
+//    int numbers[]={12,3,6};
+//    for(int i=0;i<numbers.length-1;i++){
+//    for(int j=0;j<numbers.length-1-i;j++){
+//    if(numbers[j]>numbers[j+1]){
+//    int temp=numbers[j];
+//    numbers[j]=numbers[j+1];
+//    numbers[j+1]=temp;
+//    }
+//    }
+//    }
+//        System.out.println(Arrays.toString(numbers));
+
+
+
+    Scanner s=new Scanner(System.in);
+        System.out.println("how many number you sorted");
+        int n=s.nextInt();
+        int numbers[]=new int[n];
+        for(int i=0;i<numbers.length;i++){
+            System.out.println("Enter Number "+(i+1));
+            int userInput=s.nextInt();
+            numbers[i]=userInput;
         }
-        return array;
+        System.out.println(Arrays.toString(numbers));
+        
+        for(int i=0;i<numbers.length-1;i++){
+        for(int j=0;j<numbers.length-1-i;j++){
+        if(numbers[j]>numbers[j+1]){
+        int temp=numbers[j];
+        numbers[j]=numbers[j+1];
+        numbers[j+1]=temp;
+        }
+        }
+        }
+        System.out.println("Sorted Numbers are "+Arrays.toString(numbers));
+
+    
     }
 }
+
+
