@@ -42,6 +42,9 @@ public class ArrayHome020226 {
         System.out.println("sum is " +sum);
         System.out.println("Average is "+avg);
         System.out.println("max number is "+max);
+
+    
+        
     }
         }
       

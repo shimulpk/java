@@ -13,5 +13,6 @@ public class FactorialNumber {
         }
         System.out.println("factorial is " + factorial);
 
+   
     }
 }

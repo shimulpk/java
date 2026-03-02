@@ -12,11 +12,13 @@ public class Calculator {
         System.out.println("enput number1");
         double number1=input.nextDouble();
         
-        System.out.println("chose operator + - * /");
-        String operator=input.next();
+       
         
          System.out.println("enput number2");
         double number2=input.nextDouble();
+        
+         System.out.println("chose operator + - * /");
+        String operator=input.next();
         
         if(operator.equals("+")){
             System.out.println(number1+number2);
