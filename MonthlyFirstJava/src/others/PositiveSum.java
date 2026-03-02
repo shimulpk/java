@@ -16,5 +16,7 @@ public class PositiveSum {
             number=s.nextInt();
         }
         System.out.println("Sum is "+sum);
+
+
     }
 }

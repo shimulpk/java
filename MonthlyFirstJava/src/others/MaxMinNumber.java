@@ -29,5 +29,8 @@ public class MaxMinNumber {
         }
         System.out.println("Max Number is "+max);
         System.out.println("Min Number is "+min);
+
+
+      
     }
 }
