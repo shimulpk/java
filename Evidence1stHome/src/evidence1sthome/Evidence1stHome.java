@@ -42,6 +42,11 @@ public class Evidence1stHome {
         }
         System.out.println("Max numbers "+max);
         System.out.println("Min numbers "+min);
+
+
+        
+        
+
 }
     
         

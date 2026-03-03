@@ -13,7 +13,8 @@ public class TestBinaryIo {
 
     public static void main(String[] args) {
 
-        try {
+       
+                    try {
             FileOutputStream output=new FileOutputStream("C:\\Users\\hp\\Desktop\\binaryIO.dat");
             for(int i=1;i<=10;i++){
             output.write(i);
@@ -35,6 +36,10 @@ public class TestBinaryIo {
         } catch (IOException ex) {
             Logger.getLogger(TestBinaryIo.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+ 
+                
+                
         
     }
 

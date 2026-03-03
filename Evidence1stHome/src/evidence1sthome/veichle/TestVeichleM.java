@@ -9,6 +9,8 @@ public class TestVeichleM {
 
 Truck truck=new Truck(2005, 500);
         System.out.println(truck.getSalePrice());
+
+
     }
    
   
