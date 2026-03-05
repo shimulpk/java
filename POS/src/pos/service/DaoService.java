@@ -10,4 +10,5 @@ public interface DaoService<E> {
     void update(int id);
     E findByID(int id);
     void delete(int id);
+    
 }

@@ -201,6 +201,7 @@ public class CategoryView extends javax.swing.JFrame {
         // TODO add your handling code here:
         String catName=txtCategoryName.getText().trim();
         c=new Category(catName);
+        
         categoryDao.save(c);
         showCategory();
     }//GEN-LAST:event_btnCategorySaveMouseClicked
