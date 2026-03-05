@@ -1,5 +1,5 @@
 
-package pos.model;
+package pos.service;
 
 import java.util.List;
 

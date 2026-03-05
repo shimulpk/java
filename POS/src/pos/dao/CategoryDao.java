@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import pos.model.Category;
-import pos.model.DaoService;
+import pos.service.DaoService;
 import pos.util.DbUtil;
 
 
