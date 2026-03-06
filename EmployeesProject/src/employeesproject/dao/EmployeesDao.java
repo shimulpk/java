@@ -50,14 +50,22 @@ public class EmployeesDao {
            ps=db.getcon().prepareStatement(sql);
            ResultSet rs=ps.executeQuery();
            while(rs.next()){
-           Employees e=new Employees(0, sql, 0, sql)
+           Employees e=new Employees(rs.getInt("id"),
+                   rs.getNString("name"), 
+                   rs.getDouble("salary"),
+                   rs.getString("email")
+           );
+           list.add(e);
+           ps.close();
+            rs.close();
+            db.getcon().close();
            }
            
        } catch (SQLException ex) {
            Logger.getLogger(EmployeesDao.class.getName()).log(Level.SEVERE, null, ex);
        }
        
-       return null;
+       return list;
        
        }
        
