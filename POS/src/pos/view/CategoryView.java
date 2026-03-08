@@ -23,6 +23,7 @@ public class CategoryView extends javax.swing.JFrame {
     public CategoryView() {
         initComponents();
         showCategory();
+        clear();
     }
     public void showCategory(){
     String [] columns={"SL","Name"};
@@ -34,6 +35,11 @@ public class CategoryView extends javax.swing.JFrame {
         for(Category c : list){
         model.addRow(new Object[]{c.getId(),c.getName()});
         }
+    }
+    
+    public void clear(){
+    txtCategoryName.setText("");
+    txtCategoryId.setText("");
     }
 
     /**
@@ -51,9 +57,11 @@ public class CategoryView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtCategoryName = new javax.swing.JTextField();
         btnCategorySave = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnCategoryUpdate = new javax.swing.JButton();
+        btnCategoryDelete = new javax.swing.JButton();
+        btnCategoryReset = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtCategoryId = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCategoryTable = new javax.swing.JTable();
@@ -94,43 +102,67 @@ public class CategoryView extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        btnCategoryUpdate.setText("Update");
+        btnCategoryUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCategoryUpdateMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        btnCategoryDelete.setText("Delete");
+        btnCategoryDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCategoryDeleteMouseClicked(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        btnCategoryReset.setText("Reset");
+        btnCategoryReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCategoryResetMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setText("ID");
+
+        txtCategoryId.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCategoryId, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btnCategorySave)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(btnCategoryUpdate)
+                .addGap(49, 49, 49)
+                .addComponent(btnCategoryDelete)
+                .addGap(37, 37, 37)
+                .addComponent(btnCategoryReset)
+                .addGap(41, 41, 41))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCategorySave)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jButton4))
-                    .addComponent(jLabel2))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCategoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCategorySave)
+                    .addComponent(btnCategoryUpdate)
+                    .addComponent(btnCategoryDelete)
+                    .addComponent(btnCategoryReset)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(txtCategoryId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -158,6 +190,11 @@ public class CategoryView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblCategoryTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCategoryTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblCategoryTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,6 +243,41 @@ public class CategoryView extends javax.swing.JFrame {
         showCategory();
     }//GEN-LAST:event_btnCategorySaveMouseClicked
 
+    private void tblCategoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCategoryTableMouseClicked
+        // TODO add your handling code here:
+        int rowIndex=tblCategoryTable.getSelectedRow();
+        String id=tblCategoryTable.getModel().getValueAt(rowIndex, 0).toString();
+        String name=tblCategoryTable.getModel().getValueAt(rowIndex, 1).toString();
+        
+        txtCategoryName.setText(name);
+        txtCategoryId.setText(id);
+        
+    }//GEN-LAST:event_tblCategoryTableMouseClicked
+
+    private void btnCategoryUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryUpdateMouseClicked
+        // TODO add your handling code here:
+        int id=Integer.parseInt(txtCategoryId.getText());
+        String name=txtCategoryName.getText();
+        Category c=new Category(id, name);
+        categoryDao.update(c);
+        showCategory();
+        clear();
+        
+    }//GEN-LAST:event_btnCategoryUpdateMouseClicked
+
+    private void btnCategoryDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryDeleteMouseClicked
+        // TODO add your handling code here:
+       int id=Integer.parseInt(txtCategoryId.getText());
+       categoryDao.delete(id);
+        clear();
+        showCategory();
+    }//GEN-LAST:event_btnCategoryDeleteMouseClicked
+
+    private void btnCategoryResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryResetMouseClicked
+        // TODO add your handling code here:
+        clear();
+    }//GEN-LAST:event_btnCategoryResetMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -242,17 +314,19 @@ public class CategoryView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCategoryDelete;
+    private javax.swing.JButton btnCategoryReset;
     private javax.swing.JButton btnCategorySave;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnCategoryUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCategoryTable;
+    private javax.swing.JTextField txtCategoryId;
     private javax.swing.JTextField txtCategoryName;
     // End of variables declaration//GEN-END:variables
 }

@@ -65,15 +65,15 @@ public class CategoryDao implements DaoService<Category >{
     }
 
     @Override
-    public void update(int id) {
+    public void update(Category e) {
         sql="update category set name=? where id=?";
-        Category c=new Category();
+        
         
         try {
             ps=db.getcon().prepareStatement(sql);
             
-            ps.setString(1, c.getName());
-            ps.setInt(2, id);
+            ps.setString(1, e.getName());
+            ps.setInt(2, e.getId());
             
             ps.executeUpdate();
             ps.close();
@@ -111,7 +111,21 @@ public class CategoryDao implements DaoService<Category >{
 
     @Override
     public void delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        sql="delete from Category where id=?";
+        try {
+            ps=db.getcon().prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            ps.close();
+            db.getcon().close();
+            
+            JOptionPane.showMessageDialog(null, "Category Updated");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Categoory not Updated");
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }
