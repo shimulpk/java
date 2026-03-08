@@ -27,7 +27,7 @@ public class EmployeesDao {
     
     public void save(Employees e){
     
-    sql="insert into category(name,salary,email)values(?,?,?)";
+    sql="insert into employees(name,salary,email)values(?,?,?)";
        try {
            ps=db.getcon().prepareStatement(sql);
            ps.setString(1, e.getName());

@@ -19,9 +19,9 @@ public class EmployeesProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Employees e=new Employees("Shimul", 50000, "s@gmail.com");
-//        EmployeesDao eDao=new EmployeesDao();
-//        eDao.save(e)
+        Employees e=new Employees("Robi", 60000, "r@gmail.com");
+        EmployeesDao eDao=new EmployeesDao();
+        eDao.save(e);
 
         List<Employees> list=new ArrayList<>();
         EmployeesDao ed=new EmployeesDao();
