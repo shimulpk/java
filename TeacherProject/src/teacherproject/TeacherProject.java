@@ -18,12 +18,14 @@ public class TeacherProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        Teacher t=new Teacher("Jorjia Khanm", "Lectururer", "05478764", 450000);
-//        TeachersDao td=new TeachersDao();
-//        td.save(t);
+//Teacher t=new Teacher("shimul", "Professor", "68186408", 15000);
+//TeachersDao td= new TeachersDao();
+//td.save(t);
 
 TeachersDao td=new TeachersDao();
         System.out.println(td.findAll());
+
+
         
         
     }
