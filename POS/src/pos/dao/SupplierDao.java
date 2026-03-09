@@ -34,9 +34,10 @@ public class SupplierDao implements DaoService<Supplier>{
             ps.executeUpdate();
             ps.close();
             db.getcon().close();
-            System.out.println("Supplier Added");
+            JOptionPane.showMessageDialog(null, "Supplier Added");
             
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Supplier Not Added");
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -65,10 +66,8 @@ public class SupplierDao implements DaoService<Supplier>{
             rs.close();
             db.getcon().close();
             
-            JOptionPane.showMessageDialog(null, "Supplier Added");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Supplier Not Added");
             
+        } catch (SQLException ex) {
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
       return list;
@@ -82,9 +81,9 @@ public class SupplierDao implements DaoService<Supplier>{
             ps.setString(1, e.getName());
             ps.setString(2, e.getCell());
             ps.setString(3, e.getContactPersonName());
-            ps.setString(1, e.getContactPersonCell());
-            ps.setString(1, e.getAddress());
-            ps.setInt(0, e.getId());
+            ps.setString(4, e.getContactPersonCell());
+            ps.setString(5, e.getAddress());
+            ps.setInt(6, e.getId());
             
             ps.executeUpdate();
             ps.close();
@@ -92,7 +91,7 @@ public class SupplierDao implements DaoService<Supplier>{
             
             JOptionPane.showMessageDialog(null, "Supplier Updated");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Supplier Updated");
+            JOptionPane.showMessageDialog(null, "Supplier not Updated");
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         
