@@ -49,16 +49,16 @@ public class EmployeesView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        tbleEmployeesId = new javax.swing.JTextField();
+        txtEmployeesId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        tbleEmployeesName = new javax.swing.JTextField();
+        txtEmployeesName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        tblEmployeesSalary = new javax.swing.JTextField();
+        txtEmployeesSalary = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        tblEmployeesEmail = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        txtEmployeesEmail = new javax.swing.JTextField();
+        btnEmployeesUpdate = new javax.swing.JButton();
+        btnEmployeesDelete = new javax.swing.JButton();
+        btnEmployeesReset = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -71,20 +71,27 @@ public class EmployeesView extends javax.swing.JFrame {
 
         jLabel1.setText("id");
 
+        txtEmployeesId.setEditable(false);
+
         jLabel2.setText("Name");
 
         jLabel3.setText("salary");
 
         jLabel4.setText("Email");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton2.setText("update");
+        btnEmployeesUpdate.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEmployeesUpdate.setText("update");
+        btnEmployeesUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEmployeesUpdateMouseClicked(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton3.setText("Delete");
+        btnEmployeesDelete.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEmployeesDelete.setText("Delete");
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jButton4.setText("Reset");
+        btnEmployeesReset.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEmployeesReset.setText("Reset");
 
         btnSave.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnSave.setText("save");
@@ -104,30 +111,30 @@ public class EmployeesView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tbleEmployeesId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmployeesId, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSave))
                 .addGap(71, 71, 71)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(btnEmployeesUpdate)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(tbleEmployeesName, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmployeesName, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3))
+                    .addComponent(btnEmployeesDelete))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tblEmployeesSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmployeesSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tblEmployeesEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEmployeesEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(156, 156, 156)
-                        .addComponent(jButton4)))
+                        .addComponent(btnEmployeesReset)))
                 .addContainerGap(128, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -136,18 +143,18 @@ public class EmployeesView extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(tbleEmployeesId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployeesId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbleEmployeesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployeesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(tblEmployeesSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmployeesSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(tblEmployeesEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEmployeesEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
+                    .addComponent(btnEmployeesUpdate)
+                    .addComponent(btnEmployeesDelete)
+                    .addComponent(btnEmployeesReset)
                     .addComponent(btnSave))
                 .addGap(38, 38, 38))
         );
@@ -165,6 +172,11 @@ public class EmployeesView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblEmployeeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEmployeeTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblEmployeeTable);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -209,9 +221,9 @@ public class EmployeesView extends javax.swing.JFrame {
         
         
         e=new Employees(
-                tbleEmployeesName.getText().trim(), 
-                Double.parseDouble(tblEmployeesSalary.getText().trim()),                 
-                tblEmployeesEmail.getText().trim()
+                txtEmployeesName.getText().trim(), 
+                Double.parseDouble(txtEmployeesSalary.getText().trim()),                 
+                txtEmployeesEmail.getText().trim()
         );
         
         eDao.save(e);
@@ -219,6 +231,32 @@ public class EmployeesView extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnSaveMouseClicked
+
+    private void btnEmployeesUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeesUpdateMouseClicked
+        // TODO add your handling code here:
+        
+        int id=Integer.parseInt(txtEmployeesId.getText());
+        String name=txtEmployeesName.getText();
+        double salary=Double.parseDouble(txtEmployeesSalary.getText());
+        String  email=txtEmployeesEmail.getText();
+        
+        Employees employees=new Employees(id, name, salary, email);
+        EmployeesDao employeesDao=new EmployeesDao();
+        employeesDao.update(employees);
+        
+        showEmployee();
+        
+    }//GEN-LAST:event_btnEmployeesUpdateMouseClicked
+
+    private void tblEmployeeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEmployeeTableMouseClicked
+       int rowIndex = tblEmployeeTable.getSelectedRow();
+       
+       txtEmployeesId.setText((String.valueOf(tblEmployeeTable.getModel().getValueAt(rowIndex, 0))));
+       txtEmployeesName.setText((String) tblEmployeeTable.getModel().getValueAt(rowIndex, 1));
+       txtEmployeesEmail.setText((String) tblEmployeeTable.getModel().getValueAt(rowIndex, 3));
+       txtEmployeesSalary.setText((String.valueOf(tblEmployeeTable.getModel().getValueAt(rowIndex, 2))));
+       
+    }//GEN-LAST:event_tblEmployeeTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -256,10 +294,10 @@ public class EmployeesView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEmployeesDelete;
+    private javax.swing.JButton btnEmployeesReset;
+    private javax.swing.JButton btnEmployeesUpdate;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -268,9 +306,9 @@ public class EmployeesView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblEmployeeTable;
-    private javax.swing.JTextField tblEmployeesEmail;
-    private javax.swing.JTextField tblEmployeesSalary;
-    private javax.swing.JTextField tbleEmployeesId;
-    private javax.swing.JTextField tbleEmployeesName;
+    private javax.swing.JTextField txtEmployeesEmail;
+    private javax.swing.JTextField txtEmployeesId;
+    private javax.swing.JTextField txtEmployeesName;
+    private javax.swing.JTextField txtEmployeesSalary;
     // End of variables declaration//GEN-END:variables
 }
