@@ -8,16 +8,16 @@ package practicespos.model;
  *
  * @author hp
  */
-public class User {
+public class User1 {
     private int id;
     private String userName;
     private String password;
     private String role;
 
-    public User() {
+    public User1() {
     }
 
-    public User(String userName, String password) {
+    public User1(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
