@@ -15,6 +15,9 @@ public class Product {
     private double quantity;
     private int supplierId;
     private int categoryId;
+    
+    private String supplierName;
+    private String categoryName;
 
     public Product() {
     }
@@ -35,6 +38,32 @@ public class Product {
         this.supplierId = supplierId;
         this.categoryId = categoryId;
     }
+
+    public Product(int id, String name, double price, double quantity, String supplierName, String categoryName) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.supplierName = supplierName;
+        this.categoryName = categoryName;
+    }
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+    
 
     public int getId() {
         return id;
@@ -86,8 +115,10 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", supplierId=" + supplierId + ", categoryId=" + categoryId + '}';
+        return "Product{" + "id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", supplierId=" + supplierId + ", categoryId=" + categoryId + ", supplierName=" + supplierName + ", categoryName=" + categoryName + '}';
     }
+
+    
     
     
 }

@@ -128,4 +128,40 @@ public class CategoryDao implements DaoService<Category >{
         
     }
     
+    public List<String> getAllCategoryName(){
+        List<String> list=new ArrayList<>();
+    sql="select name from category";
+        try {
+            ps=db.getcon().prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+           list.add(rs.getString("name"));
+            }
+            ps.close();
+            rs.close();
+            db.getcon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+    public int getIdByName(String categoryName){
+    sql="select id from category where name =?";
+    int id=0;
+        try {
+            ps=db.getcon().prepareStatement(sql);
+            ps.setString(id, categoryName);
+            rs=ps.executeQuery();
+            while(rs.next()){
+            id=rs.getInt("id");
+            }
+            ps.close();
+            rs.close();
+            db.getcon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return id;
+    }
+    
 }
