@@ -27,6 +27,7 @@ public class ProductView extends javax.swing.JFrame {
      */
     public ProductView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         loadCategory();
         loadSupplier();
         showAllProduct();

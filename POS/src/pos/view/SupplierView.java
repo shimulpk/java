@@ -21,6 +21,7 @@ public class SupplierView extends javax.swing.JFrame {
      */
     public SupplierView() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         showAllSupplier();
         
         clearData();
