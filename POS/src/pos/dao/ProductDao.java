@@ -53,9 +53,9 @@ public class ProductDao implements DaoService<Product>{
     @Override
     public List<Product> findAll() {
         List<Product> list=new ArrayList<>();
-        sql="select p.id,p.name as productName,p.price,p.quantity,s.name as supplierName,c.name as categoryName from product p"
-                +"join supplier s on s.id=p.supplierId "
-                +"join category c on c.id=p.categoryId";
+        sql="select p.id,p.name,p.price,p.quantity,s.name,c.name from product p "
+                +" join supplier s on s.id=p.supplierId "
+                +" join category c on c.id=p.categoryId ";
         try {
             ps=db.getcon().prepareStatement(sql);
             rs=ps.executeQuery();
