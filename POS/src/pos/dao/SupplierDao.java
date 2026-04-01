@@ -34,10 +34,9 @@ public class SupplierDao implements DaoService<Supplier>{
             ps.executeUpdate();
             ps.close();
             db.getcon().close();
-            JOptionPane.showMessageDialog(null, "Supplier Added");
+            System.out.println("Supplier Added");
             
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Supplier Not Added");
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -66,8 +65,10 @@ public class SupplierDao implements DaoService<Supplier>{
             rs.close();
             db.getcon().close();
             
-            
+            JOptionPane.showMessageDialog(null, "Supplier Added");
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Supplier Not Added");
+            
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
       return list;
@@ -81,9 +82,9 @@ public class SupplierDao implements DaoService<Supplier>{
             ps.setString(1, e.getName());
             ps.setString(2, e.getCell());
             ps.setString(3, e.getContactPersonName());
-            ps.setString(4, e.getContactPersonCell());
-            ps.setString(5, e.getAddress());
-            ps.setInt(6, e.getId());
+            ps.setString(1, e.getContactPersonCell());
+            ps.setString(1, e.getAddress());
+            ps.setInt(0, e.getId());
             
             ps.executeUpdate();
             ps.close();
@@ -91,7 +92,7 @@ public class SupplierDao implements DaoService<Supplier>{
             
             JOptionPane.showMessageDialog(null, "Supplier Updated");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Supplier not Updated");
+            JOptionPane.showMessageDialog(null, "Supplier Updated");
             Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -119,40 +120,6 @@ public class SupplierDao implements DaoService<Supplier>{
         }
         
         
-    }
-    
-    public List<String> getAllSupplierName(){
-    List<String> list=new ArrayList<>();
-    sql="select name from supplier";
-        try {
-            ps=db.getcon().prepareStatement(sql);
-            rs=ps.executeQuery();
-            while(rs.next()){
-            list.add(rs.getString("name"));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    return list;
-    }
-    
-    public int getIdByName(String supplierName){
-    sql="select id from supplier where name=?";
-     int id=0;
-        try {
-            ps=db.getcon().prepareStatement(sql);
-            ps.setString(1, supplierName);
-            rs=ps.executeQuery();
-            while(rs.next()){
-            id=rs.getInt("id");
-            }
-            ps.close();
-            rs.close();
-            db.getcon().close();
-        } catch (SQLException ex) {
-            Logger.getLogger(SupplierDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return id;
     }
     
 }

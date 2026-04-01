@@ -21,10 +21,6 @@ public class SupplierView extends javax.swing.JFrame {
      */
     public SupplierView() {
         initComponents();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        showAllSupplier();
-        
-        clearData();
     }
     
     SupplierDao dao=new SupplierDao();
@@ -46,17 +42,9 @@ public class SupplierView extends javax.swing.JFrame {
         
         DefaultTableModel model=new DefaultTableModel();
         model.setColumnIdentifiers(columns);
-        tblSupplierTable.setModel(model);
         for(Supplier s: list){
-        model.addRow(new Object[]{
-            s.getId(),
-            s.getName(),
-            s.getCell(),
-            s.getContactPersonName(),
-            s.getContactPersonCell(),
-            s.getAddress()
-        });
-        }   
+        model.addRow(new Object[](s.getId(),s.getName(),s.getCell(),s.getContactPersonName(),s.getContactPersonCell(),s.getAddress()));
+        }
     }
 
     /**
@@ -84,10 +72,9 @@ public class SupplierView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtSupplierAddress = new javax.swing.JTextField();
         btnSupplierSave = new javax.swing.JButton();
+        btnSupplierUpdate = new javax.swing.JButton();
         btnSupplierDelete = new javax.swing.JButton();
         btnSupplierReset = new javax.swing.JButton();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        btnSupplierUpdate = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSupplierTable = new javax.swing.JTable();
@@ -141,45 +128,11 @@ public class SupplierView extends javax.swing.JFrame {
             }
         });
 
+        btnSupplierUpdate.setText("Update");
+
         btnSupplierDelete.setText("Delete");
-        btnSupplierDelete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSupplierDeleteMouseClicked(evt);
-            }
-        });
 
         btnSupplierReset.setText("Reset");
-        btnSupplierReset.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSupplierResetMouseClicked(evt);
-            }
-        });
-
-        btnSupplierUpdate.setText("Update");
-        btnSupplierUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSupplierUpdateMouseClicked(evt);
-            }
-        });
-
-        jLayeredPane1.setLayer(btnSupplierUpdate, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSupplierUpdate)
-                .addContainerGap())
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnSupplierUpdate)
-                .addContainerGap())
-        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,7 +147,7 @@ public class SupplierView extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
@@ -205,7 +158,7 @@ public class SupplierView extends javax.swing.JFrame {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSupplierContactPersonCell, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +178,7 @@ public class SupplierView extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtSupplierAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnSupplierUpdate)
                                 .addGap(144, 144, 144)
                                 .addComponent(btnSupplierDelete)
                                 .addGap(129, 129, 129)
@@ -259,12 +212,11 @@ public class SupplierView extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(txtSupplierAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSupplierSave)
-                        .addComponent(btnSupplierDelete)
-                        .addComponent(btnSupplierReset))
-                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSupplierSave)
+                    .addComponent(btnSupplierUpdate)
+                    .addComponent(btnSupplierDelete)
+                    .addComponent(btnSupplierReset))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -281,11 +233,6 @@ public class SupplierView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblSupplierTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblSupplierTableMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(tblSupplierTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -339,59 +286,7 @@ public class SupplierView extends javax.swing.JFrame {
         Supplier supplier=new Supplier(name, cell, contactPersonName, contactPersonCell, address);
         dao.save(supplier);
         clearData();
-        showAllSupplier();
     }//GEN-LAST:event_btnSupplierSaveMouseClicked
-
-    private void tblSupplierTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSupplierTableMouseClicked
-        // TODO add your handling code here:
-        int rowIndex=tblSupplierTable.getSelectedRow();
-        String id=tblSupplierTable.getModel().getValueAt(rowIndex, 0).toString();
-        String name=tblSupplierTable.getModel().getValueAt(rowIndex, 1).toString();
-         String cell=tblSupplierTable.getModel().getValueAt(rowIndex, 2).toString();
-         String contactPersonName=tblSupplierTable.getModel().getValueAt(rowIndex, 3).toString();
-        String  contactPersonCell=tblSupplierTable.getModel().getValueAt(rowIndex, 4).toString();
-        String address=tblSupplierTable.getModel().getValueAt(rowIndex, 5).toString();
-        
-        txtSupplierId.setText(id);
-        txtSupplierName.setText(name);
-        txtSupplierCellNo.setText(cell);
-        txtSupplierContactPersonName.setText(contactPersonName);
-        txtSupplierContactPersonCell.setText(contactPersonCell);
-        txtSupplierAddress.setText(address);
-        
-        
-        
-    }//GEN-LAST:event_tblSupplierTableMouseClicked
-
-    private void btnSupplierUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierUpdateMouseClicked
-        // TODO add your handling code here:
-        int id=Integer.parseInt(txtSupplierId.getText());
-      String name=txtSupplierName.getText().trim();
-      String cell=txtSupplierCellNo.getText().trim();
-      String contactPersonName=txtSupplierContactPersonName.getText().trim();
-      String contactPersonCell=txtSupplierContactPersonCell.getText().trim();
-      String address=txtSupplierAddress.getText().trim();
-      
-      Supplier supplier=new Supplier(id, name, cell, contactPersonName, contactPersonCell, address);
-      dao.update(supplier);
-      clearData();
-      showAllSupplier();
-      
-      
-    }//GEN-LAST:event_btnSupplierUpdateMouseClicked
-
-    private void btnSupplierDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierDeleteMouseClicked
-        // TODO add your handling code here:
-        int id=Integer.parseInt(txtSupplierId.getText());
-        dao.delete(id);
-        showAllSupplier();
-        clearData();
-    }//GEN-LAST:event_btnSupplierDeleteMouseClicked
-
-    private void btnSupplierResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierResetMouseClicked
-        // TODO add your handling code here:
-        clearData(); 
-    }//GEN-LAST:event_btnSupplierResetMouseClicked
 
     /**
      * @param args the command line arguments
@@ -440,7 +335,6 @@ public class SupplierView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

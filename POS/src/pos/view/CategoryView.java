@@ -22,7 +22,6 @@ public class CategoryView extends javax.swing.JFrame {
      */
     public CategoryView() {
         initComponents();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         showCategory();
         clear();
     }
