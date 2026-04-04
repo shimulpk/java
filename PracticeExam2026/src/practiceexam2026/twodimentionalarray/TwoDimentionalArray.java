@@ -37,5 +37,7 @@ public class TwoDimentionalArray {
 for(int []item:numbers){
     System.out.println(Arrays.toString(item));
 }
+
+ 
     }
 }
