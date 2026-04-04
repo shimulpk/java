@@ -4,6 +4,8 @@
  */
 package practiceexam2026;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hp
@@ -15,14 +17,20 @@ public class PracticeExam2026 {
      */
     public static void main(String[] args) {
         try {
-            int k=10/0;
-            System.out.println(k);
+            Scanner s=new Scanner(System.in);
+            System.out.println("Input First Number");
+            int n1=s.nextInt();
+            System.out.println("Input Second Number");
+            int n2=s.nextInt();
+            double result=n1/n2;
+            System.out.println(result);
+            
         } catch (Exception e) {
-            System.out.println("Error:divide by zero not allowed");
+            System.out.println(e);
+            System.out.println("Error: Cannot devide by zero");
         } finally {
-            System.out.println("Progrramme finished");
+            System.out.println("Program finished");
         }
-
         
         
        
