@@ -24,14 +24,12 @@ public class PracticeExam2026 {
             int n2=s.nextInt();
             double result=n1/n2;
             System.out.println(result);
-            
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println("Error: Cannot devide by zero");
+            System.out.println("Error: Cannot divide by zero");
         } finally {
-            System.out.println("Program finished");
+            System.out.println("Program Finished");
         }
-        
         
        
     }

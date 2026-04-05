@@ -10,18 +10,17 @@ package practiceexam2026.MultiThread;
  */
 public class MultiThread {
     public static void main(String[] args) {
-        Runnable printA=new PrintChar('A', 5);
-        Runnable printB=new PrintChar('B', 5);
-        Runnable printC=new PrintChar('C', 5);
+        Runnable printX=new PrintChar('X', 20);
+        Runnable printY=new PrintChar('Y', 20);
+        Runnable printZ=new PrintChar('Z', 20);
         
-        Thread t1=new Thread(printA);
-        Thread t2=new Thread(printB);
-        Thread t3=new Thread(printC);
+        Thread t1=new Thread(printX);
+        Thread t2=new Thread(printY);
+        Thread t3=new Thread(printZ);
         
         t1.start();
         t2.start();
         t3.start();
-
         
         
     }

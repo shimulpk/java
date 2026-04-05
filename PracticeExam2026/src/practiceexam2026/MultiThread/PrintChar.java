@@ -9,9 +9,8 @@ package practiceexam2026.MultiThread;
  * @author hp
  */
 public class PrintChar implements Runnable{
-    
-    private char charToPrint;
-    private int times;
+   private char charToPrint;
+   private int times;
 
     public PrintChar() {
     }
@@ -24,9 +23,12 @@ public class PrintChar implements Runnable{
     @Override
     public void run() {
         for(int i=0;i<times;i++){
-            System.out.println(charToPrint+ "");
+            System.out.println(charToPrint+ " ");
         }
     }
+   
+   
+    
 
 
     
