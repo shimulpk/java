@@ -54,7 +54,9 @@ public class ClassTestCrud {
              ps.setDouble(2, salary);
              ps.setString(3, designation);
              ps.close();
+             System.out.println("Saved");
          } catch (SQLException ex) {
+             System.out.println("Not Saved");
              Logger.getLogger(ClassTestCrud.class.getName()).log(Level.SEVERE, null, ex);
          }
     }
